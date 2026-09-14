@@ -1,11 +1,11 @@
 # MLE_lab2
 Working with PySpark
 
-##Project Overview
+## Project Overview
 
 This repository contains a containerized data processing pipeline that implements a Medallion Architecture. It is designed to reliably ingest raw daily loan data, apply staged transformations, and output refined datasets in Parquet format. The containerized approach ensures a consistent runtime environment for all data operations.
 
-##Repository Structure
+## Repository Structure
 
 The project relies on modular Python scripts, orchestrated environments, and isolated processing stages:
 
@@ -23,16 +23,16 @@ Dockerfile & docker-compose.yaml: Definitions for packaging the application into
 
 requirements.txt: A manifest of all required Python libraries and dependencies.
 
-##Data Pipeline Flow
+## Data Pipeline Flow
 The architecture processes information sequentially through three distinct maturity layers:
 
-Bronze Layer: Ingests raw CSV loan data and writes it to Parquet format, creating an immutable historical record without altering the original values.
+**Bronze Layer:** Ingests raw CSV loan data and writes it to Parquet format, creating an immutable historical record without altering the original values.
 
-Silver Layer: Cleanses, filters, and standardizes the data from the Bronze layer, resolving missing values and establishing a conformed schema for analysis.
+**Silver Layer:** Cleanses, filters, and standardizes the data from the Bronze layer, resolving missing values and establishing a conformed schema for analysis.
 
-Gold Layer: Aggregates the cleansed Silver data into highly refined, business-level tables optimized for downstream analytics, reporting, and label generation.
+**Gold Layer:** Aggregates the cleansed Silver data into highly refined, business-level tables optimized for downstream analytics, reporting, and label generation.
 
-##Getting Started
+## Getting Started
 To initialize and run this pipeline on your local machine, follow these steps:
 
 Navigate to the root directory of the project within your terminal.
